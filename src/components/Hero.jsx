@@ -4,8 +4,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden"
-      style={{ padding: '120px 60px 80px' }}
+      className="min-h-screen flex items-center relative overflow-hidden px-6 md:px-16 pt-32 pb-20 md:py-0"
     >
       {/* Background layers */}
       <div
@@ -33,15 +32,15 @@ export default function Hero() {
 
       {/* Decorative watermark */}
       <div
-        className="absolute left-16 top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none"
+        className="absolute left-4 md:left-16 top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none hidden md:block"
         style={{
-          fontSize: 320,
+          fontSize: 'clamp(200px, 20vw, 320px)',
           fontWeight: 900,
           color: '#2ab8c8',
           opacity: 0.1,
           lineHeight: 1,
           fontFamily: "'Tajawal', sans-serif",
-          letterSpacing: -20,
+          letterSpacing: -10,
         }}
       >
         S
@@ -49,7 +48,7 @@ export default function Hero() {
 
       {/* Floating orbs */}
       <div
-        className="absolute rounded-full pointer-events-none animate-float-orb"
+        className="absolute rounded-full pointer-events-none animate-float-orb opacity-50 md:opacity-100"
         style={{
           width: 300, height: 300, top: -100, left: 200,
           background: 'radial-gradient(circle, rgba(42,184,200,.12), transparent 70%)',
@@ -57,7 +56,7 @@ export default function Hero() {
         }}
       />
       <div
-        className="absolute rounded-full pointer-events-none animate-float-orb"
+        className="absolute rounded-full pointer-events-none animate-float-orb opacity-50 md:opacity-100"
         style={{
           width: 200, height: 200, bottom: 150, left: 400,
           background: 'radial-gradient(circle, rgba(240,165,0,.08), transparent 70%)',
@@ -66,9 +65,9 @@ export default function Hero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-2xl">
+      <div className="relative z-10 max-w-4xl mx-auto lg:mx-0 text-center lg:text-right">
         {/* Badge */}
-        <div className="animate-fade-slide inline-flex items-center gap-2 mb-7 px-5 py-2 rounded-full border text-sm font-semibold text-gold"
+        <div className="animate-fade-slide inline-flex items-center gap-2 mb-7 px-5 py-2 rounded-full border text-xs md:text-sm font-semibold text-gold"
           style={{ background: 'rgba(240,165,0,.15)', borderColor: 'rgba(240,165,0,.4)' }}>
           <span className="animate-pulse-dot w-2 h-2 bg-gold rounded-full inline-block" />
           شريكك التسويقي الطبي المتخصص
@@ -76,8 +75,8 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="animate-fade-slide-d2 font-black leading-[1.1] mb-6"
-          style={{ fontSize: 'clamp(42px, 6vw, 78px)' }}
+          className="animate-fade-slide-d2 font-black leading-[1.1] mb-6 text-white"
+          style={{ fontSize: 'clamp(36px, 8vw, 78px)' }}
         >
           حضورك الرقمي<br />
           يحتاج إلى شريك<br />
@@ -85,34 +84,33 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="animate-fade-slide-d4 text-[#8cc5cc] text-lg leading-relaxed mb-10 max-w-xl">
+        <p className="animate-fade-slide-d4 text-[#8cc5cc] text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mr-0">
           شركة سيناريو — أكثر من 10 سنوات من الخبرة في التسويق الإلكتروني
           والتسويق الطبي المتخصص. نفهم احتياجاتك ونقدم حلولاً تُترجم إلى نتائج ملموسة.
         </p>
 
         {/* Buttons */}
-        <div className="animate-fade-slide-d6 flex gap-4">
+        <div className="animate-fade-slide-d6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a href="#contact">
-            <button className="btn-primary font-cairo">ابدأ رحلتك معنا</button>
+            <button className="btn-primary w-full sm:w-auto font-cairo">ابدأ رحلتك معنا</button>
           </a>
           <a href="#services">
-            <button className="btn-outline font-cairo">تعرف على خدماتنا</button>
+            <button className="btn-outline w-full sm:w-auto font-cairo">تعرف على خدماتنا</button>
           </a>
         </div>
       </div>
 
       {/* Stats bar */}
       <div
-        className="animate-fade-slide-d8 absolute left-15 bottom-20 z-10 flex gap-10"
-        style={{ left: 60, bottom: 80 }}
+        className="animate-fade-slide-d8 absolute lg:left-16 bottom-10 lg:bottom-20 z-10 flex flex-wrap justify-center lg:justify-start gap-8 md:gap-10 w-full lg:w-auto left-0 px-6"
       >
         {stats.map((s, i) => (
-          <div key={i} className="relative text-center pl-5">
+          <div key={i} className="relative text-center lg:text-right pl-0 lg:pl-5">
             {i > 0 && (
-              <span className="absolute right-0 top-[20%] w-px h-[60%] bg-teal-bright/30" />
+              <span className="hidden lg:block absolute right-0 top-[20%] w-px h-[60%] bg-teal-bright/30" />
             )}
-            <div className="text-4xl font-black text-gold leading-none">{s.num}</div>
-            <div className="text-xs text-[#8cc5cc] mt-1">{s.label}</div>
+            <div className="text-3xl md:text-4xl font-black text-gold leading-none">{s.num}</div>
+            <div className="text-[10px] md:text-xs text-[#8cc5cc] mt-1 font-bold uppercase tracking-wider">{s.label}</div>
           </div>
         ))}
       </div>

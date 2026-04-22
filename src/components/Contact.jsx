@@ -54,11 +54,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden text-center"
-      style={{
-        padding: '100px 60px',
-        background: 'linear-gradient(135deg, #0a2a35, #0d4a5a)',
-      }}
+      className="relative overflow-hidden text-center px-6 md:px-16 py-20 bg-gradient-to-br from-[#0a2a35] to-[#0d4a5a]"
     >
       {/* Background glow */}
       <div
@@ -69,23 +65,17 @@ export default function Contact() {
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Heading */}
         <div className="section-label justify-center">تواصل معنا</div>
-        <h2 className="text-5xl font-black leading-snug mb-3">
-          هل أنت مستعد لتحويل<br />
+        <h2 className="text-3xl md:text-5xl font-black leading-tight md:leading-snug mb-3 text-white">
+          هل أنت مستعد لتحويل<br className="hidden md:block" />
           <span className="text-gold">حضورك الرقمي؟</span>
         </h2>
-        <p className="text-[#8cc5cc] text-lg mb-12">
+        <p className="text-[#8cc5cc] text-base md:text-lg mb-8 md:mb-12">
           املأ البيانات أدناه وسيصلنا طلبك مباشرةً على واتساب
         </p>
 
         {/* Form card */}
         <div
-          className="reveal relative overflow-hidden text-right rounded-3xl backdrop-blur-md"
-          style={{
-            background: 'linear-gradient(145deg, rgba(13,74,90,.7), rgba(6,24,32,.9))',
-            border: '1px solid rgba(42,184,200,.25)',
-            padding: '44px 40px',
-            boxShadow: '0 40px 80px rgba(0,0,0,.4)',
-          }}
+          className="reveal relative overflow-hidden text-right rounded-3xl backdrop-blur-md bg-gradient-to-br from-[rgba(13,74,90,0.7)] to-[rgba(6,24,32,0.9)] border border-teal-bright/25 p-6 md:p-11 shadow-[0_40px_80px_rgba(0,0,0,0.4)]"
         >
           {/* Top gradient bar */}
           <div
@@ -93,8 +83,8 @@ export default function Contact() {
             style={{ background: 'linear-gradient(90deg, #f0a500, #2ab8c8, #f0a500)' }}
           />
 
-          {/* Two-column fields */}
-          <div className="grid grid-cols-2 gap-5 mb-5">
+          {/* Form fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5 text-white">
             {FIELDS.filter(f => f.half).map(f => (
               <div key={f.id} className="form-field">
                 <label className="form-label">{f.label}</label>
@@ -109,8 +99,7 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Full-width location */}
-          <div className="form-field mb-5">
+          <div className="form-field mb-5 text-white">
             <label className="form-label">📍 مكان العيادة</label>
             <input
               type="text"
@@ -121,31 +110,29 @@ export default function Contact() {
             />
           </div>
 
-          {/* Package select */}
-          <div className="form-field mb-5">
+          <div className="form-field mb-5 text-white">
             <label className="form-label">📦 الباقة المهتم بها</label>
             <select
               value={form.package}
               onChange={e => update('package', e.target.value)}
-              className="form-input"
+              className="form-input appearance-none"
               style={{ color: form.package ? '#fff' : 'rgba(140,197,204,.45)' }}
             >
               <option value="" disabled>اختر الباقة ...</option>
               {PACKAGES.map(p => (
-                <option key={p.value} value={p.value}>{p.label}</option>
+                <option key={p.value} value={p.value} className="bg-[#0a2a35]">{p.label}</option>
               ))}
             </select>
           </div>
 
-          {/* Details textarea */}
-          <div className="form-field mb-8">
+          <div className="form-field mb-8 text-white">
             <label className="form-label">💬 تفاصيل إضافية</label>
             <textarea
               rows={4}
               placeholder="أي معلومات إضافية تريد مشاركتها معنا..."
               value={form.details}
               onChange={e => update('details', e.target.value)}
-              className="form-input resize-y"
+              className="form-input resize-y min-h-[120px]"
               style={{ lineHeight: 1.7 }}
             />
           </div>
@@ -155,23 +142,19 @@ export default function Contact() {
             onClick={sendWhatsApp}
             className="w-full flex items-center justify-center gap-3 py-5 rounded-full
                        text-white text-lg font-bold font-cairo cursor-pointer border-none
-                       transition-all duration-300
-                       hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(37,211,102,.5)]"
-            style={{
-              background: 'linear-gradient(135deg, #25d366, #128c3e)',
-              boxShadow: '0 8px 32px rgba(37,211,102,.35)',
-            }}
+                       transition-all duration-300 shadow-[0_8px_32px_rgba(37,211,102,0.35)]
+                       bg-gradient-to-r from-[#25d366] to-[#128c3e]
+                       hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(37,211,102,0.5)]"
           >
             <span
-              className="animate-wa-ping w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgba(255,255,255,.2)' }}
+              className="animate-wa-ping w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-white/20"
             >
               <WhatsAppIcon />
             </span>
             ارسل على واتساب الآن
           </button>
 
-          <p className="text-center mt-4 text-xs" style={{ color: 'rgba(140,197,204,.6)' }}>
+          <p className="text-center mt-4 text-[10px] md:text-xs text-[#8cc5cc]/60">
             🔒 بياناتك آمنة وستُستخدم فقط للتواصل معك
           </p>
         </div>

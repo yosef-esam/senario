@@ -4,18 +4,12 @@ export default function Challenges() {
   return (
     <section
       id="challenges"
-      className="relative overflow-hidden"
-      style={{
-        padding: '100px 60px',
-        background: 'linear-gradient(180deg, #0a2a35 0%, #061820 100%)',
-      }}
+      className="relative overflow-hidden px-6 md:px-16 py-20 bg-gradient-to-b from-[#0a2a35] to-[#061820]"
     >
       {/* Background glow */}
       <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none top-[-200px] left-1/2 -translate-x-1/2 w-full md:w-[800px] h-[800px]"
         style={{
-          top: -200, left: '50%', transform: 'translateX(-50%)',
-          width: 800, height: 800,
           background: 'radial-gradient(circle, rgba(26,122,138,.15) 0%, transparent 70%)',
         }}
       />
@@ -23,37 +17,36 @@ export default function Challenges() {
       {/* Header */}
       <div className="text-center mb-16 relative z-10">
         <div className="section-label justify-center">التشخيص</div>
-        <h2 className="text-5xl font-black leading-snug mb-4">
-          التحديات التي تواجهها<br />كطبيب أو مركز طبي
+        <h2 className="text-3xl md:text-5xl font-black leading-tight md:leading-snug mb-4">
+          التحديات التي تواجهها<br className="hidden md:block" /> كطبيب أو مركز طبي
         </h2>
-        <p className="text-[#8cc5cc] text-lg leading-relaxed max-w-xl mx-auto">
+        <p className="text-[#8cc5cc] text-base md:text-lg leading-relaxed max-w-xl mx-auto">
           نفهم ما تمر به لأننا عملنا مع مئات الأطباء والمراكز الطبية وخضنا معهم كل هذه التحديات.
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 gap-7 max-w-4xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 max-w-4xl mx-auto relative z-10">
         {challenges.map((c, i) => (
           <div
             key={c.num}
-            className={`challenge-card reveal reveal-d${i}`}
+            className={`challenge-card reveal reveal-d${i % 5 + 1}`}
           >
             {/* Corner glow */}
             <div
-              className="absolute top-0 right-0 pointer-events-none"
+              className="absolute top-0 right-0 pointer-events-none w-[120px] h-[120px]"
               style={{
-                width: 120, height: 120,
                 background: 'radial-gradient(circle, rgba(42,184,200,.12) 0%, transparent 70%)',
               }}
             />
             <div
-              className="font-black leading-none mb-3 font-tajawal"
-              style={{ fontSize: 64, color: 'rgba(42,184,200,.12)' }}
+              className="font-black leading-none mb-3 font-tajawal text-5xl md:text-6xl lg:text-7xl"
+              style={{ color: 'rgba(42,184,200,.12)' }}
             >
               {c.num}
             </div>
-            <h3 className="text-xl font-bold text-teal-bright mb-3">{c.title}</h3>
-            <p className="text-base leading-relaxed" style={{ color: 'rgba(232,244,246,.75)' }}>
+            <h3 className="text-lg md:text-xl font-bold text-teal-bright mb-3">{c.title}</h3>
+            <p className="text-sm md:text-base leading-relaxed text-white/70">
               {c.text}
             </p>
           </div>
