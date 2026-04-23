@@ -1,10 +1,12 @@
 import { stats } from '../data'
+import { Button } from './ui/Button'
+import { Section } from './ui/Section'
 
 export default function Hero() {
   return (
-    <section
+    <Section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden px-6 md:px-16 pt-32 pb-20 md:py-0"
+      className="min-h-screen flex items-center relative"
     >
       {/* Background layers */}
       <div
@@ -91,12 +93,12 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="animate-fade-slide-d6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#contact">
-            <button className="btn-primary w-full sm:w-auto font-cairo">ابدأ رحلتك معنا</button>
-          </a>
-          <a href="#services">
-            <button className="btn-outline w-full sm:w-auto font-cairo">تعرف على خدماتنا</button>
-          </a>
+          <Button as="a" href="#contact" variant="primary" className="w-full sm:w-auto">
+            ابدأ رحلتك معنا
+          </Button>
+          <Button as="a" href="#services" variant="outline" className="w-full sm:w-auto">
+            تعرف على خدماتنا
+          </Button>
         </div>
       </div>
 
@@ -114,6 +116,6 @@ export default function Hero() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

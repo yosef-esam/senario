@@ -1,10 +1,11 @@
 import { clients } from '../data'
+import { Section } from './ui/Section'
 
 export default function Clients() {
   return (
-    <section
+    <Section
       id="clients"
-      className="text-center px-6 md:px-16 py-20 bg-[#0a2a35]"
+      className="text-center bg-[#0a2a35]"
     >
       <div className="section-label justify-center">عملاؤنا</div>
       <h2 className="text-3xl md:text-5xl font-black leading-tight md:leading-snug mb-4 text-white">تشرفنا بالعمل معهم</h2>
@@ -32,6 +33,6 @@ export default function Clients() {
         "نؤمن أن العلاقة الناجحة مع عميلنا هي التي تمتد لسنوات — أنت لا تشتري خدمة شهرية،
         بل تحصل على شريك معياره الأساسي هو نجاحك في الحصول على المزيد من العملاء."
       </p>
-    </section>
+    </Section>
   )
 }

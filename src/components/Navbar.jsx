@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { navLinks } from '../data'
+import { Button } from './ui/Button'
 
 export default function Navbar() {
   const [active, setActive] = useState('')
@@ -49,20 +50,14 @@ export default function Navbar() {
         ))}
         {/* Desktop CTA */}
         <li>
-          <a href="#contact">
-            <button
-              className="bg-gold hover:bg-gold-light text-teal-dark font-bold rounded-full
-                         px-7 py-2.5 text-sm cursor-pointer border-none transition-all duration-300
-                         hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(240,165,0,0.35)]"
-            >
-              تواصل معنا
-            </button>
-          </a>
+          <Button as="a" href="#contact" variant="primary" className="px-7 py-2.5 text-sm">
+            تواصل معنا
+          </Button>
         </li>
       </ul>
 
       {/* Mobile Toggle */}
-      <button 
+      <button
         className="lg:hidden text-white p-2"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
@@ -86,9 +81,9 @@ export default function Navbar() {
             {l.label}
           </a>
         ))}
-        <a href="#contact" onClick={() => setIsOpen(false)}>
-          <button className="btn-primary mt-4">تواصل معنا</button>
-        </a>
+        <Button as="a" href="#contact" onClick={() => setIsOpen(false)} className="mt-4">
+          تواصل معنا
+        </Button>
       </div>
     </nav>
   )

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Toaster } from 'react-hot-toast'
 import Navbar     from './components/Navbar'
 import Hero       from './components/Hero'
 import Challenges from './components/Challenges'
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <div className="font-cairo">
+      <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <main>
         <Hero />

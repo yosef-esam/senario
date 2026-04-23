@@ -1,10 +1,12 @@
 import { challenges } from '../data'
+import { Card } from './ui/Card'
+import { Section } from './ui/Section'
 
 export default function Challenges() {
   return (
-    <section
+    <Section
       id="challenges"
-      className="relative overflow-hidden px-6 md:px-16 py-20 bg-gradient-to-b from-[#0a2a35] to-[#061820]"
+      className="bg-gradient-to-b from-[#0a2a35] to-[#061820]"
     >
       {/* Background glow */}
       <div
@@ -28,7 +30,7 @@ export default function Challenges() {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 max-w-4xl mx-auto relative z-10">
         {challenges.map((c, i) => (
-          <div
+          <Card
             key={c.num}
             className={`challenge-card reveal reveal-d${i % 5 + 1}`}
           >
@@ -49,9 +51,9 @@ export default function Challenges() {
             <p className="text-sm md:text-base leading-relaxed text-white/70">
               {c.text}
             </p>
-          </div>
+          </Card>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

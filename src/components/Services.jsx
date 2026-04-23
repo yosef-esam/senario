@@ -1,42 +1,60 @@
+import { useRef } from 'react'
 import { services } from '../data'
+import { Card } from './ui/Card'
+import { Section } from './ui/Section'
 
 export default function Services() {
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    const container = scrollRef.current
+    const scrollAmount = 320
+
+    if (direction === 'next') {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    } else {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section id="services" className="relative px-6 md:px-16 py-20 bg-[#061820]">
-      {/* Header */}
+    <Section id="services" className="bg-[#061820]">
       <div className="mb-16 max-w-2xl mx-auto lg:mx-0 text-center lg:text-right">
         <div className="section-label lg:justify-start justify-center">العلاج</div>
-        <h2 className="text-3xl md:text-5xl font-black leading-tight md:leading-snug mb-4">
+        <h2 className="text-3xl md:text-5xl font-black mb-4">
           كل ما تحتاجه<br className="hidden md:block" /> في مكانٍ واحد
         </h2>
-        <p className="text-[#8cc5cc] text-base md:text-lg leading-relaxed">
+        <p className="text-[#8cc5cc]">
           نقدم لك حلاً تسويقياً متكاملاً مبنياً على خبرة سنوات في المجال الطبي.
         </p>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex justify-between mb-6">
+        <button onClick={() => scroll('prev')} className="text-white">←</button>
+        <button onClick={() => scroll('next')} className="text-white">→</button>
+      </div>
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+      >
         {services.map((s, i) => (
-          <div
-            key={s.num}
-            className={`service-card reveal reveal-d${i % 5 + 1}`}
-          >
-            {/* Background number */}
-            <div
-              className="absolute top-5 left-6 font-black leading-none font-tajawal pointer-events-none select-none text-6xl md:text-7xl"
-              style={{ color: 'rgba(42,184,200,.05)' }}
-            >
-              {s.num}
-            </div>
+          <div key={s.num} className="min-w-[280px] md:min-w-[320px] flex-shrink-0">
+            <Card variant="service">
+              {/* Number */}
+              <div
+                className="absolute top-5 left-6 text-6xl font-black pointer-events-none"
+                style={{ color: 'rgba(42,184,200,.05)' }}
+              >
+                {s.num}
+              </div>
 
-            <div className="service-icon">{s.icon}</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2.5">{s.title}</h3>
-            <p className="text-sm md:text-base leading-relaxed text-[#8cc5cc]/80">
-              {s.text}
-            </p>
+              <div className="service-icon">{s.icon}</div>
+              <h3 className="text-lg font-bold text-white mb-2">{s.title}</h3>
+              <p className="text-sm text-[#8cc5cc]/80">{s.text}</p>
+            </Card>
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }
