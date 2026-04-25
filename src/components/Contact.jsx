@@ -114,7 +114,7 @@ export default function Contact() {
     <Section
       id="contact"
       className="text-center"
-      background="bg-gradient-to-br from-[#0a2a35] to-[#0d4a5a]"
+      background="bg-gradient-to-br from-[#1a3545] to-[#2d5d6e]"
     >
       <div className="relative z-10 max-w-2xl mx-auto">
         <div className="section-label justify-center">تواصل معنا</div>

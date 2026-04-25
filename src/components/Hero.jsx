@@ -13,9 +13,9 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 80% 50%, rgba(26,122,138,.4) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 80% at 10% 80%, rgba(240,165,0,.12) 0%, transparent 50%),
-            linear-gradient(135deg, #051820 0%, #0a2a35 50%, #0d3a45 100%)
+            radial-gradient(ellipse 80% 60% at 80% 50%, rgba(42,184,200,.25) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 80% at 10% 80%, rgba(42,184,200,.08) 0%, transparent 50%),
+            linear-gradient(135deg, #0e1e28 0%, #1a3545 50%, #253050 100%)
           `,
         }}
       />
@@ -61,7 +61,7 @@ export default function Hero() {
         className="absolute rounded-full pointer-events-none animate-float-orb opacity-50 md:opacity-100"
         style={{
           width: 200, height: 200, bottom: 150, left: 400,
-          background: 'radial-gradient(circle, rgba(240,165,0,.08), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(42,184,200,.08), transparent 70%)',
           animationDuration: '10s', animationDelay: '-3s',
         }}
       />
@@ -69,9 +69,9 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto lg:mx-0 text-center lg:text-right">
         {/* Badge */}
-        <div className="animate-fade-slide inline-flex items-center gap-2 mb-7 px-5 py-2 rounded-full border text-xs md:text-sm font-semibold text-gold"
-          style={{ background: 'rgba(240,165,0,.15)', borderColor: 'rgba(240,165,0,.4)' }}>
-          <span className="animate-pulse-dot w-2 h-2 bg-gold rounded-full inline-block" />
+        <div className="animate-fade-slide inline-flex items-center gap-2 mb-7 px-5 py-2 rounded-full border text-xs md:text-sm font-semibold text-teal-bright"
+          style={{ background: 'rgba(42,184,200,.15)', borderColor: 'rgba(42,184,200,.4)' }}>
+          <span className="animate-pulse-dot w-2 h-2 bg-teal-bright rounded-full inline-block" />
           شريكك التسويقي الطبي المتخصص
         </div>
 
@@ -111,7 +111,7 @@ export default function Hero() {
             {i > 0 && (
               <span className="hidden lg:block absolute right-0 top-[20%] w-px h-[60%] bg-teal-bright/30" />
             )}
-            <div className="text-3xl md:text-4xl font-black text-gold leading-none">{s.num}</div>
+            <div className="text-3xl md:text-4xl font-black text-teal-bright leading-none">{s.num}</div>
             <div className="text-[10px] md:text-xs text-[#8cc5cc] mt-1 font-bold uppercase tracking-wider">{s.label}</div>
           </div>
         ))}

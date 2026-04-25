@@ -12,7 +12,7 @@
     direction: rtl;
   }
   ::selection {
-    @apply bg-gold text-teal-dark;
+    @apply bg-teal-bright text-teal-dark;
   }
   ::-webkit-scrollbar {
     width: 6px;
@@ -58,19 +58,19 @@
 @layer components {
   /* Section label */
   .section-label {
-    @apply inline-flex items-center gap-2.5 text-gold text-xs font-bold tracking-widest uppercase mb-4;
+    @apply inline-flex items-center gap-2.5 text-teal-bright text-xs font-bold tracking-widest uppercase mb-4;
   }
   .section-label::before {
     content: '';
-    @apply block w-8 h-0.5 bg-gold flex-shrink-0;
+    @apply block w-8 h-0.5 bg-teal-bright flex-shrink-0;
   }
 
   /* Buttons */
   .btn-primary {
-    @apply bg-gradient-to-br from-gold to-gold-light text-teal-dark font-bold rounded-full
+    @apply bg-gradient-to-br from-teal-bright to-teal-light text-ink font-bold rounded-full
            px-6 py-3.5 md:px-9 md:py-4 text-base md:text-lg cursor-pointer border-none transition-all duration-300
-           shadow-[0_8px_32px_rgba(240,165,0,0.3)]
-           hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(240,165,0,0.45)];
+           shadow-[0_8px_32px_rgba(42,184,200,0.3)]
+           hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(42,184,200,0.45)];
   }
   .btn-outline {
     @apply bg-transparent text-white border-2 border-teal-bright/50 font-semibold rounded-full
@@ -90,10 +90,10 @@
     @apply relative overflow-hidden rounded-2xl p-6 md:p-8 border border-teal-bright/10
            bg-gradient-to-br from-teal-mid/50 to-ink/90
            transition-all duration-500
-           hover:border-gold/35 hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(0,0,0,0.4)];
+           hover:border-teal-bright/35 hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(0,0,0,0.4)];
   }
   .service-card:hover .service-icon {
-    @apply bg-gold text-teal-dark rotate-12 scale-110;
+    @apply bg-teal-bright text-teal-dark rotate-12 scale-110;
   }
 
   .service-icon {
@@ -109,8 +109,8 @@
            hover:border-teal-bright/40 hover:-translate-y-2;
   }
   .pricing-card-featured {
-    @apply border-gold bg-gradient-to-br from-[rgba(40,100,120,0.8)] to-teal-mid/90
-           shadow-[0_40px_80px_rgba(0,0,0,0.5),0_0_60px_rgba(240,165,0,0.1)]
+    @apply border-teal-bright bg-gradient-to-br from-[rgba(30,80,100,0.85)] to-teal-mid/90
+           shadow-[0_40px_80px_rgba(0,0,0,0.5),0_0_60px_rgba(42,184,200,0.1)]
            md:scale-105 hover:translate-y-0;
   }
 
@@ -125,7 +125,7 @@
     @apply w-full bg-white/5 border border-teal-bright/25 rounded-xl px-4 py-3.5
            text-base text-white font-cairo placeholder-teal-bright/40 outline-none
            transition-all duration-300
-           focus:border-gold focus:shadow-[0_0_0_3px_rgba(240,165,0,0.12)];
+           focus:border-teal-bright focus:shadow-[0_0_0_3px_rgba(42,184,200,0.12)];
     direction: rtl;
   }
   .form-input-error {
@@ -135,10 +135,10 @@
   /* Nav */
   .nav-link {
     @apply text-[#e8f4f6] text-sm font-semibold no-underline transition-colors duration-300
-           hover:text-gold;
+           hover:text-teal-bright;
   }
   .nav-link-active {
-    @apply text-gold;
+    @apply text-teal-bright;
   }
 
   /* Social */
@@ -146,6 +146,6 @@
     @apply w-10 h-10 bg-teal-bright/10 border border-teal-bright/20 rounded-full
            flex items-center justify-center text-base no-underline text-white
            transition-all duration-300
-           hover:bg-gold hover:border-gold hover:text-teal-dark hover:-translate-y-1;
+           hover:bg-teal-bright hover:border-teal-bright hover:text-ink hover:-translate-y-1;
   }
 }

@@ -10,7 +10,7 @@ export default function Pricing() {
     <Section
       id="pricing"
       className="text-center"
-      background="bg-gradient-to-b from-[#061820] to-[#0a2a35]"
+      background="bg-gradient-to-b from-[#0e1e28] to-[#1a3545]"
     >
       {/* Header */}
       <div className="mb-16">

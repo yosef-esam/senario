@@ -12,16 +12,12 @@ export default {
       },
       colors: {
         teal: {
-          dark:   '#0a2a35',
-          mid:    '#0d4a5a',
-          light:  '#1a7a8a',
+          dark:   '#1a3545',
+          mid:    '#2d5d6e',
+          light:  '#3d7a8a',
           bright: '#2ab8c8',
         },
-        gold: {
-          DEFAULT: '#f0a500',
-          light:   '#ffc940',
-        },
-        ink: '#061820',
+        ink: '#0e1e28',
       },
       animation: {
         'spin-slow':   'spin 8s linear infinite',
