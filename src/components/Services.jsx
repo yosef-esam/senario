@@ -1,70 +1,42 @@
-import { useRef } from "react";
-import { services } from "../data";
-import { Card } from "./ui/Card";
-import { Section } from "./ui/Section";
+import { services } from '../data'
 
 export default function Services() {
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    const container = scrollRef.current;
-    const scrollAmount = 320;
-
-    if (direction === "next") {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    } else {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
-    <Section id="services" className="bg-[#0e1e28]">
-      <div className="mb-16 max-w-2xl mx-auto lg:mx-0 text-center lg:text-right">
-        <div className="section-label lg:justify-start justify-center">
-          العلاج
-        </div>
-        <h2 className="text-3xl md:text-5xl font-black mb-4">
-          كل ما تحتاجه
-          <br className="hidden md:block" /> في مكانٍ واحد
+    <section id="services" className="relative" style={{ padding: '100px 60px', background: '#061820' }}>
+      {/* Header */}
+      <div className="mb-16 max-w-lg">
+        <div className="section-label">العلاج</div>
+        <h2 className="text-5xl font-black leading-snug mb-4">
+          كل ما تحتاجه<br />في مكانٍ واحد
         </h2>
-        <p className="text-[#8cc5cc]">
+        <p className="text-[#8cc5cc] text-lg leading-relaxed">
           نقدم لك حلاً تسويقياً متكاملاً مبنياً على خبرة سنوات في المجال الطبي.
         </p>
       </div>
 
-      <div className="flex justify-between mb-6">
-        <button onClick={() => scroll("prev")} className="text-white">
-          ←
-        </button>
-        <button onClick={() => scroll("next")} className="text-white">
-          →
-        </button>
-      </div>
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
-      >
+      {/* Grid */}
+      <div className="grid grid-cols-3 gap-6">
         {services.map((s, i) => (
           <div
             key={s.num}
-            className="min-w-[280px] md:min-w-[320px] flex-shrink-0"
+            className={`service-card reveal reveal-d${i % 6}`}
           >
-            <Card variant="service">
-              {/* Number */}
-              <div
-                className="absolute top-5 left-6 text-6xl font-black pointer-events-none"
-                style={{ color: "rgba(42,184,200,.12)" }}
-              >
-                {s.num}
-              </div>
+            {/* Background number */}
+            <div
+              className="absolute top-5 left-6 font-black leading-none font-tajawal pointer-events-none select-none"
+              style={{ fontSize: 72, color: 'rgba(42,184,200,.05)' }}
+            >
+              {s.num}
+            </div>
 
-              <div className="service-icon">{s.icon}</div>
-              <h3 className="text-lg font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-sm text-[#8cc5cc]/80">{s.text}</p>
-            </Card>
+            <div className="service-icon">{s.icon}</div>
+            <h3 className="text-lg font-bold text-white mb-2.5">{s.title}</h3>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(140,197,204,.8)' }}>
+              {s.text}
+            </p>
           </div>
         ))}
       </div>
-    </Section>
-  );
+    </section>
+  )
 }

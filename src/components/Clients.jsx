@@ -36,14 +36,24 @@ export default function Clients() {
         {clients.map((cl, i) => (
           <div
             key={i}
-            className={`reveal reveal-d${(i % 5) + 1} min-w-[200px] md:min-w-[260px] h-[130px] flex-shrink-0
-                        cursor-default transition-all duration-300
-                        bg-white/[0.04] border border-teal-bright/10 rounded-2xl px-6 md:px-10
-                        hover:bg-teal-bright/10 hover:border-teal-bright/40
-                        hover:-translate-y-1 focus:outline-none
-                        flex items-center justify-center`}
+            className={`reveal reveal-d${(i % 5) + 1}
+      min-w-[200px] md:min-w-[260px]
+      flex-shrink-0 
+      cursor-default transition-all duration-300
+      rounded-2xl px-6 md:px-10 py-4
+      flex flex-col items-center justify-center gap-3
+     `}
           >
-            <img src={cl.Image} alt={cl.name || 'client'} className="w-full h-full object-contain" />
+            <img
+              src={cl.Image}
+              alt={cl.name || 'client'}
+              className="w-full h-[120px] object-contain"
+            />
+            {cl.duration && (
+              <p className="text-[#8cc5cc] text-sm md:text-base font-medium text-center">
+                لمدة تتجاوز {cl.duration}
+              </p>
+            )}
           </div>
         ))}
       </div>
