@@ -44,11 +44,13 @@ export default function Clients() {
       flex flex-col items-center justify-center gap-3
      `}
           >
-            <img
-              src={cl.Image}
-              alt={cl.name || 'client'}
-              className="w-full h-[120px] object-contain"
-            />
+            <div className="w-full h-[120px] flex items-center justify-center">
+              <img
+                src={cl.Image}
+                alt={cl.name || 'client'}
+                className="h-[60px] w-auto object-contain"
+              />
+            </div>
             {cl.duration && (
               <p className="text-[#8cc5cc] text-sm md:text-base font-medium text-center">
                 لمدة تتجاوز {cl.duration}

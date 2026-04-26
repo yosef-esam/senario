@@ -32,33 +32,43 @@ export default function Challenges() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 max-w-4xl mx-auto relative z-10">
-        {challenges.map((c, i) => (
-          <Card
-            key={c.num}
-            className={`challenge-card reveal reveal-d${(i % 5) + 1}`}
-          >
-            {/* Corner glow */}
-            <div
-              className="absolute top-0 right-0 pointer-events-none w-[120px] h-[120px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(42,184,200,.12) 0%, transparent 70%)",
-              }}
-            />
-            <div
-              className="font-black leading-none mb-3 font-tajawal text-5xl md:text-6xl lg:text-7xl"
-              style={{ color: "rgba(42,184,200,.12)" }}
+        {challenges.map((c, i) => {
+          const isLast = i === challenges.length - 1
+          const isOdd = challenges.length % 2 !== 0
+
+          return (
+            <Card
+              key={c.num}
+              className={`challenge-card reveal reveal-d${(i % 5) + 1}
+        ${isLast && isOdd ? "md:col-span-2 md:max-w-md md:mx-auto" : ""}
+      `}
             >
-              {c.num}
-            </div>
-            <h3 className="text-lg md:text-xl font-bold text-teal-bright mb-3">
-              {c.title}
-            </h3>
-            <p className="text-sm md:text-base leading-relaxed text-white/70">
-              {c.text}
-            </p>
-          </Card>
-        ))}
+              {/* Corner glow */}
+              <div
+                className="absolute top-0 right-0 pointer-events-none w-[120px] h-[120px]"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(42,184,200,.12) 0%, transparent 70%)",
+                }}
+              />
+
+              <div
+                className="font-black leading-none mb-3 font-tajawal text-5xl md:text-6xl lg:text-7xl"
+                style={{ color: "rgba(42,184,200,.12)" }}
+              >
+                {c.num}
+              </div>
+
+              <h3 className="text-lg md:text-xl font-bold text-teal-bright mb-3">
+                {c.title}
+              </h3>
+
+              <p className="text-sm md:text-base leading-relaxed text-white/70">
+                {c.text}
+              </p>
+            </Card>
+          )
+        })}
       </div>
     </Section>
   );
