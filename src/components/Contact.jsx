@@ -114,13 +114,13 @@ export default function Contact() {
     <Section
       id="contact"
       className="text-center"
-      background="bg-gradient-to-br from-[#1a3545] to-[#2d5d6e]"
+      background="rgb(238,238,238)"
     >
       <div className="relative z-10 max-w-2xl mx-auto">
         <div className="section-label justify-center">تواصل معنا</div>
 
         <Card className="text-right">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5 text-gray-800">
             {contactFields.map(field => (
               <div key={field.id} className={field.half ? '' : 'md:col-span-2'}>
                 <Input
@@ -147,7 +147,7 @@ export default function Contact() {
             onChange={e => updateField('details', e.target.value)}
           />
 
-          <Button onClick={sendWhatsApp} disabled={isSubmitting}>
+          <Button variant="whatsapp" onClick={sendWhatsApp} disabled={isSubmitting}>
             <WhatsAppIcon />
             {isSubmitting ? 'جاري الإرسال...' : 'ارسل على واتساب'}
           </Button>

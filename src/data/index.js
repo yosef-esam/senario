@@ -182,11 +182,11 @@ export const plans = [
 ]
 
 export const clients = [
-  { Image: "/clients-logo/LOGO DR hesham.png", duration: "3 سنين" },
+  { Image: "/clients-logo/Dr hesham Logo-01.png", duration: "3 سنين" },
   { Image: "/clients-logo/LOGO DR MEKKAWY.png", duration: "سنة ونصف" },
-  { Image: "/clients-logo/لوجو البدري - white bg.png", duration: "سنة ونصف" },
-  { Image: "/clients-logo/dental home.jpeg" },
-  { Image: "/clients-logo/د رشدي -- white bg.png", },
+  { Image: "/clients-logo/Badri-logo.png", duration: "سنة ونصف" },
+  { Image: "/clients-logo/dental home.png" },
+  { Image: "/clients-logo/logo Dr. Rushdy.png", },
   { Image: "/clients-logo/مني كمال - lgoo.png", },
 ]
 

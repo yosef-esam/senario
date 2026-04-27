@@ -6,113 +6,137 @@ export default function Hero() {
   return (
     <Section
       id="hero"
-      className="min-h-screen flex items-center relative"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Background layers */}
+      {/* Background */}
       <div
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 80% 50%, rgba(42,184,200,.25) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 80% at 10% 80%, rgba(42,184,200,.08) 0%, transparent 50%),
-            linear-gradient(135deg, #0e1e28 0%, #1a3545 50%, #253050 100%)
+            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,255,255,0.18) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 70% at 50% 80%, rgba(255,255,255,0.1) 0%, transparent 60%),
+            linear-gradient(135deg, #6f8791 0%, #7f98a3 50%, #6e8590 100%)
           `,
         }}
       />
 
-      {/* Animated grid */}
+      {/* Subtle grid */}
       <div
         className="absolute inset-0 animate-grid-drift"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(42,184,200,.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(42,184,200,.06) 1px, transparent 1px)
+            linear-gradient(rgba(42,184,200,.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(42,184,200,.03) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
         }}
       />
 
-      {/* Decorative watermark */}
+      {/* Watermark (lighter) */}
       <div
-        className="absolute left-4 md:left-16 top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none hidden md:block"
+        className=" absolute left-10 top-1/2 -translate-y-1/2 z-0 pointer-events-none hidden md:block"
         style={{
-          fontSize: 'clamp(200px, 20vw, 320px)',
+          fontSize: 'clamp(180px, 18vw, 260px)',
           fontWeight: 900,
-          color: '#2ab8c8',
-          opacity: 0.1,
-          lineHeight: 1,
-          fontFamily: "'Tajawal', sans-serif",
+          color: 'white',
+          opacity: 0.05,
           letterSpacing: -10,
         }}
       >
         S
       </div>
 
-      {/* Floating orbs */}
+      {/* Floating orbs (soft) */}
       <div
-        className="absolute rounded-full pointer-events-none animate-float-orb opacity-50 md:opacity-100"
+        className="absolute rounded-full pointer-events-none animate-float-orb"
         style={{
-          width: 300, height: 300, top: -100, left: 200,
-          background: 'radial-gradient(circle, rgba(42,184,200,.12), transparent 70%)',
+          width: 220,
+          height: 220,
+          top: -60,
+          left: 120,
+          background:
+            'radial-gradient(circle, rgba(255,255,255,.12), transparent 70%)',
           animationDuration: '8s',
         }}
       />
+
       <div
-        className="absolute rounded-full pointer-events-none animate-float-orb opacity-50 md:opacity-100"
+        className="absolute rounded-full pointer-events-none animate-float-orb"
         style={{
-          width: 200, height: 200, bottom: 150, left: 400,
-          background: 'radial-gradient(circle, rgba(42,184,200,.08), transparent 70%)',
-          animationDuration: '10s', animationDelay: '-3s',
+          width: 180,
+          height: 180,
+          bottom: 120,
+          right: 120,
+          background:
+            'radial-gradient(circle, rgba(255,255,255,.08), transparent 70%)',
+          animationDuration: '10s',
+          animationDelay: '-3s',
         }}
       />
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-4xl mx-auto lg:mx-0 text-center lg:text-right">
+      {/* Main Content (CENTERED) */}
+      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center justify-center px-6">
+
         {/* Badge */}
-        <div className="animate-fade-slide inline-flex items-center gap-2 mb-7 px-5 py-2 rounded-full border text-xs md:text-sm font-semibold text-teal-bright"
-          style={{ background: 'rgba(42,184,200,.15)', borderColor: 'rgba(42,184,200,.4)' }}>
-          <span className="animate-pulse-dot w-2 h-2 bg-teal-bright rounded-full inline-block" />
+        <div
+          className="inline-flex items-center gap-2 mb-6 px-5 py-2 rounded-full text-xs md:text-sm font-semibold text-white"
+          style={{
+            background: 'rgba(255,255,255,.2)',
+            border: '1px solid rgba(255,255,255,.3)',
+          }}
+        >
+          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
           شريكك التسويقي الطبي المتخصص
         </div>
 
         {/* Headline */}
         <h1
-          className="animate-fade-slide-d2 font-black leading-[1.1] mb-6 text-white"
-          style={{ fontSize: 'clamp(36px, 8vw, 78px)' }}
+          className="font-black leading-[1.2] mb-6 text-white"
+          style={{ fontSize: 'clamp(36px, 8vw, 72px)' }}
         >
           حضورك الرقمي<br />
           يحتاج إلى شريك<br />
-          <span className="text-teal-bright">محترف حقيقي</span>
+          <span className="text-white/80">محترف</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="animate-fade-slide-d4 text-[#8cc5cc] text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mr-0">
+        <p className="text-[#e6f2f5] text-base md:text-lg leading-relaxed mb-10 max-w-xl">
           شركة سيناريو — أكثر من 10 سنوات من الخبرة في التسويق الإلكتروني
           والتسويق الطبي المتخصص. نفهم احتياجاتك ونقدم حلولاً تُترجم إلى نتائج ملموسة.
         </p>
 
         {/* Buttons */}
-        <div className="animate-fade-slide-d6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <Button as="a" href="#contact" variant="primary" className="w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button
+            as="a"
+            href="#contact"
+            variant="primary"
+            className="w-full sm:w-auto"
+          >
             ابدأ رحلتك معنا
           </Button>
-          <Button as="a" href="#services" variant="outline" className="w-full sm:w-auto">
+
+          <Button
+            as="a"
+            href="#services"
+            variant="outline"
+            className="w-full sm:w-auto"
+          >
             تعرف على خدماتنا
           </Button>
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div
-        className="animate-fade-slide-d8 absolute lg:left-16 bottom-10 lg:bottom-20 z-10 flex flex-wrap justify-center lg:justify-start gap-8 md:gap-10 w-full lg:w-auto left-0 px-6"
-      >
+      {/* Stats */}
+      <div className="absolute bottom-10 w-full flex justify-center gap-8 px-6 flex-wrap">
         {stats.map((s, i) => (
-          <div key={i} className="relative text-center lg:text-right pl-0 lg:pl-5">
-            {i > 0 && (
-              <span className="hidden lg:block absolute right-0 top-[20%] w-px h-[60%] bg-teal-bright/30" />
-            )}
-            <div className="text-3xl md:text-4xl font-black text-teal-bright leading-none">{s.num}</div>
-            <div className="text-[10px] md:text-xs text-[#8cc5cc] mt-1 font-bold uppercase tracking-wider">{s.label}</div>
+          <div key={i} className="text-center">
+            <div className="text-3xl md:text-4xl font-black text-white">
+              {s.num}
+            </div>
+            <div className="text-xs text-[#e6f2f5] mt-1 font-bold uppercase tracking-wider">
+              {s.label}
+            </div>
           </div>
         ))}
       </div>

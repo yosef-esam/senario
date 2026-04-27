@@ -1,10 +1,10 @@
 import React from 'react'
 
 export function Card({ children, className = '', variant = 'default', ...props }) {
-  const baseClasses = 'rounded-3xl backdrop-blur-md border shadow-[0_40px_80px_rgba(0,0,0,0.4)] p-6 md:p-11'
+  const baseClasses = 'rounded-3xl border p-6 md:p-11 transition-all duration-500'
 
   const variants = {
-    default: 'bg-gradient-to-br from-[rgba(30,75,90,0.75)] to-[rgba(14,30,40,0.95)] border-teal-bright/25',
+    default: 'bg-transparent border-black/10 shadow-none hover:bg-white/45 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:border-black/20 hover:-translate-y-2',
     service: 'service-card',
     pricing: 'pricing-card'
   }
@@ -14,4 +14,4 @@ export function Card({ children, className = '', variant = 'default', ...props }
       {children}
     </div>
   )
-}
+}
