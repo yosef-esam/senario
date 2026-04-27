@@ -7,6 +7,12 @@ export default function PlanCard({ plan }) {
             variant="pricing"
             className={`${plan.featured ? 'pricing-card-featured' : 'reveal'} md:hover:scale-110 transition-transform duration-500`}
         >
+            {plan.featured && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gold text-teal-dark px-6 py-1.5 text-xs font-bold"
+                    style={{ borderRadius: '0 0 16px 16px' }}>
+                    ⭐ الأكثر طلباً
+                </div>
+            )}
 
             <div className={`text-sm font-semibold text-gray-500 mb-1 ${plan.featured ? 'mt-4' : ''}`}>
                 {plan.name}
